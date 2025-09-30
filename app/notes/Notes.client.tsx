@@ -58,11 +58,11 @@ export default function NotesClient() {
           Create note +
         </button>
       </header>
-      {isLoading && <Loader />}
-      {isError && <ErrorMessage text="Error, please try again" />}
-      {data !== undefined && data?.notes.length === 0 && (
-        <ErrorMessage text="No notes found" />
-      )}
+      {/* {isLoading && <Loader />} */}
+      {/* {isError && <ErrorMessage text="Error, please try again" />} */}
+      {/* {data !== undefined && data?.notes.length === 0 && (
+        // <ErrorMessage text="No notes found" />
+      )} */}
       {data !== undefined && data?.notes.length > 0 && (
         <NoteList notes={data?.notes} />
       )}
@@ -71,7 +71,7 @@ export default function NotesClient() {
           <NoteForm onClose={closeModal} />
         </Modal>
       )}
-      <Toaster />
+      {/* <Toaster /> */}
     </div>
   );
 }

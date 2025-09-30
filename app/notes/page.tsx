@@ -6,7 +6,12 @@ import {
 } from "@tanstack/react-query";
 import NotesClient from "./Notes.client";
 
-const Notes = async () => {
+interface NotesProps {
+  searchValue: string;
+  page: number;
+}
+
+const Notes = async ({ searchValue, page }: NotesProps) => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
@@ -15,7 +20,7 @@ const Notes = async () => {
   });
 
   return (
-    <HydrationBoundary state={dehydrate(QueryClient)}>
+    <HydrationBoundary state={dehydrate(queryClient)}>
       <NotesClient />
     </HydrationBoundary>
   );
