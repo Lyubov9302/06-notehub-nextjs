@@ -51,3 +51,8 @@ export const DeleteNote = async (id: string): Promise<Note> => {
   const response = await axios.delete<Note>(`/notes/${id}`, authConfig);
   return response.data;
 };
+
+export const fetchNoteById = async (id: string): Promise<Note> => {
+  const response = await axios.get<Note>(`/notes/${id}`, authConfig);
+  return response.data;
+};
