@@ -20,10 +20,11 @@ const Details = async ({ params }: DetailsProps) => {
     queryFn: () => fetchNoteById(id),
   });
 
-  return;
-  <HydrationBoundary state={dehydrate(queryClient)}>
-    <NoteDetails />;
-  </HydrationBoundary>;
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <NoteDetails />;
+    </HydrationBoundary>
+  );
 };
 
 export default Details;

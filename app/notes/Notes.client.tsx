@@ -3,14 +3,11 @@
 import css from "../page.module.css";
 import { useState } from "react";
 import NoteList from "../../components/NoteList/NoteList";
-// import { Toaster } from "react-hot-toast";
 import { FetchNotes } from "../../lib/api";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import Pagination from "../../components/Pagination/Pagination";
 import { useDebouncedCallback } from "use-debounce";
 import Modal from "../../components/Modal/Modal";
-// import Loader from "../Loader/Loader";
-// import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import NoteForm from "../../components/NoteForm/NoteForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
 
@@ -58,11 +55,7 @@ export default function NotesClient() {
           Create note +
         </button>
       </header>
-      {/* {isLoading && <Loader />} */}
-      {/* {isError && <ErrorMessage text="Error, please try again" />} */}
-      {/* {data !== undefined && data?.notes.length === 0 && (
-        // <ErrorMessage text="No notes found" />
-      )} */}
+
       {data !== undefined && data?.notes.length > 0 && (
         <NoteList notes={data?.notes} />
       )}
@@ -71,7 +64,6 @@ export default function NotesClient() {
           <NoteForm onClose={closeModal} />
         </Modal>
       )}
-      {/* <Toaster /> */}
     </div>
   );
 }
