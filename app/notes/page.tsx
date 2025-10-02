@@ -6,17 +6,12 @@ import {
 } from "@tanstack/react-query";
 import NotesClient from "./Notes.client";
 
-interface NotesProps {
-  searchValue: string;
-  page: number;
-}
-
-const Notes = async ({ searchValue, page }: NotesProps) => {
+const Notes = async () => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["notes", searchValue, page],
-    queryFn: () => FetchNotes(searchValue, page),
+    queryKey: ["notes", "", 1],
+    queryFn: () => FetchNotes("", 1),
   });
 
   return (

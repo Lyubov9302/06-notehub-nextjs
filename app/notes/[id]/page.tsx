@@ -22,7 +22,7 @@ const Details = async ({ params }: DetailsProps) => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <NoteDetails />;
+      <NoteDetails />
     </HydrationBoundary>
   );
 };
