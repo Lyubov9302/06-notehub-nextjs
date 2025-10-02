@@ -1,6 +1,6 @@
 "use client";
 
-import css from "../page.module.css";
+import css from "./page.module.css";
 import { useState } from "react";
 import NoteList from "../../components/NoteList/NoteList";
 import { FetchNotes } from "../../lib/api";
